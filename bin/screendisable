@@ -1,0 +1,52 @@
+#!/bin/sh
+
+PGR="$0"
+
+listscr()
+{
+	xrandr | grep " connected"
+	exit 0
+}
+
+offscr()
+{
+	if test "$#" != "1"; then
+		echo "Display name expected"
+		exit 1
+	fi
+
+	xrandr --output $1 --off
+
+	exit $?
+}
+
+help()
+{
+cat << EOF
+$0 a program to list and disable screens
+
+Usage:
+	$0 --list : list screens
+	$0 --off [OUTPUT] : disable a given screen
+EOF
+exit 1
+}
+
+
+while test $# -gt 0
+do
+	case $1 in
+		--list)
+			listscr
+			;;
+		--off)
+			offscr $2
+		;;
+		*)
+			help
+		;;
+	esac
+	shift
+done
+
+help
