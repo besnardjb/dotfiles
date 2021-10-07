@@ -1,0 +1,20 @@
+#!/bin/sh
+
+dock()
+{
+	screenres  3200 1800 30 HDMI-1
+	screendisable --off eDP-1
+	sleep 1
+}
+
+
+has_connected_screen()
+{
+	xrandr | grep "$1 connected" > /dev/null
+	return $?
+}
+
+if has_connected_screen "eDP-1" && has_connected_screen "HDMI-1"; then
+	#DOCKED
+	dock
+fi

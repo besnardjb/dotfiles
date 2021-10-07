@@ -1,0 +1,19 @@
+#!/bin/sh
+
+i3-msg "workspace 3; exec google-chrome"
+sleep 3
+
+i3-msg "workspace 10; exec discord"
+sleep 3
+
+i3-msg "workspace 9; exec evolution"
+sleep 3
+
+i3-msg "workspace 8; exec spotify"
+sleep 3
+
+i3-msg "workspace 2; exec gnome-terminal"
+i3-msg "workspace 2; exec gnome-terminal"
+sleep 3
+
+i3-msg "workspace 1; exec code"
