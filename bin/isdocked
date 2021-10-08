@@ -4,7 +4,7 @@ dock()
 {
 	screenres  3200 1800 30 HDMI-1
 	screendisable --off eDP-1
-	sleep 1
+	i3-msg restart
 }
 
 
