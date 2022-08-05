@@ -1,0 +1,7 @@
+alias tbt = thread apply all bt
+set pagination off
+set breakpoint pending on
+b MPC_Abort
+b abort
+b _mpc_mpi_report_error
+b mpc_launch_pmi_abort
