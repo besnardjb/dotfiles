@@ -1,3 +1,3 @@
 #!/bin/bash
 
-curl wttr.in/Angervilliers?format=4 2>/dev/null
+curl wttr.in/Bruyères-le-Châtel?format=4 2>/dev/null
