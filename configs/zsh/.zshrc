@@ -19,7 +19,7 @@ bindkey -e
 #
 #
 
-RCDEBUG=0
+RCDEBUG=1
 
 debugrc()
 {
@@ -98,9 +98,8 @@ fi
 #
 #
 
-export PROMPT="%F{blue}[%?] %F{green}%n%F{reset}@%F{red}%m%F{reset} %~ ${NL} %# "
+export PS1="%F{blue}[%?] %F{green}%n%F{reset}@%F{red}%m%F{reset}%~ "$'\n'" %# "
 export PAGER="less -R"
-export PS1="$PROMPT"
 
 # Some Paths
 #
