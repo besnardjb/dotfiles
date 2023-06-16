@@ -1,0 +1,20 @@
+CompileFlags:                     # Tweak the parse settings
+  Add: [-xc, -Wextra, -Wall]             # treat all files as C++, enable more warnings
+Diagnostics:
+  ClangTidy:
+    CheckOptions:
+      readability-implicit-bool-conversion.AllowPointerConditions: 1
+      readability-function-cognitive-complexity.Threshold: 10
+      readability-function-cognitive-complexity.IgnoreMacros: true
+    Add: "*"
+    Remove: [
+      altera-*,
+      hicpp-signed-bitwise,
+      readability-identifier-length,
+      bugprone-reserved-identifier,
+      cert-dcl37-c,
+      cert-dcl51-cpp,
+      readability-braces-around-statements,
+      google-readability-braces-around-statements,
+      hicpp-braces-around-statements,
+      llvmlibc-restrict-system-libc-headers]
